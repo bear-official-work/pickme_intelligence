@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Search, Filter, Download, Plus, Edit2, Trash2, UserCheck, UserX, X } from 'lucide-react';
 import { StatusBadge } from '../components/UI/StatusBadge';
-import { useSupabaseData } from '../hooks/useSupabaseData';
+import { useData } from '../hooks/useData';
 import { useTheme } from '../contexts/ThemeContext';
 import toast from 'react-hot-toast';
 
 export const Officers: React.FC = () => {
-  const { officers, isLoading, addOfficer, updateOfficer, deleteOfficer } = useSupabaseData();
+  const { officers, isLoading, addOfficer, updateOfficer, deleteOfficer } = useData();
   const { isDark } = useTheme();
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
